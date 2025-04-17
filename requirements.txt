@@ -12,4 +12,4 @@ json
 pymysql                                                                
 plotly.express                                                                      
 sqlite3                                    
-import pickle   
+pickle   
