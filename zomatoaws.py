@@ -190,7 +190,7 @@ df_original.reset_index(inplace=True)
 
 limited_df = df_original.head(100)
 
-engine = create_engine(f'mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws}')
+engine = create_engine('mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws')
 
 connection_variable ='mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws'
 try:
