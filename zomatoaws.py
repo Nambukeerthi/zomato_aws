@@ -22,9 +22,9 @@ def aws_bucket_connection(file):
         
         response = requests.get(url)
         
-        data = response.json()  # Parses JSON into Python dict
+        data_json = response.json()  # Parses JSON into Python dict
         
-        return data 
+        return data_json 
 
 #-------------------------------------------------------------
 
@@ -185,18 +185,14 @@ df_original.reset_index(inplace=True)
 
 #-------------------------------------------------------------------
 
-username = 'admin'
-password = 'nambukeerthi'
-host = 'zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com'
-port = '3306'
-database = 'zomatoaws'
+
 #  MYSQL / AWS RDS CONNECTION
 
 limited_df = df_original.head(100)
 
-engine = create_engine(f'mysql+pymysql://{username}:{password}@{host}:{port}/{database}')
+engine = create_engine(f'mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws}')
 
-connection_variable ='mysql+pymysql://{username}:{password}@{host}:{port}/{database}'
+connection_variable ='mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws'
 try:
     with engine.begin() as conn:
         limited_df.to_sql('zomatodata', con=conn, if_exists='replace', index=False)
