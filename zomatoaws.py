@@ -274,10 +274,7 @@ def visual(tables):
 
 
 # MACHINE LEARNING MODEL
-url_ml = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/zomato_ML.pkl"  # replace with your actual URL
 
-response_ml = requests.get(url_ml)
-ml_data = pickle.loads(response_ml.content)
 
 class option:
   
@@ -478,8 +475,10 @@ with st.form("my form 1"):
                             Country_id = option.encoded_country_id[country_name1]
                             City_id = option.encoded_city_id[city_name1]
                             
-                           
-                            model = ml_data
+                            url_ml = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/zomato_ML.pkl"  # replace with your actual URL
+                            response_ml = requests.get(url_ml)
+                            model = pickle.loads(response_ml.content)
+                            
                             
                             user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
                             raw_prediction = model.predict(user_data)
