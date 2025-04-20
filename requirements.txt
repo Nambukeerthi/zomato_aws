@@ -8,7 +8,7 @@ uv
 sqlalchemy
 mysql_connector
 boto3
-json                                                              
+plotly
 plotly.express                                                                      
 sqlite3                                    
 pickle   
