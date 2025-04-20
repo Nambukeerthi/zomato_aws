@@ -10,5 +10,5 @@ mysql_connector
 boto3
 plotly
 plotly.express                                                                                                          
-pickle   
+scikit-learn  
 pymysql
