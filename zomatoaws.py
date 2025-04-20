@@ -20,7 +20,7 @@ def aws_bucket_connection(file):
     
         s3 = boto3.client('s3')
 
-        bucket_name = 'zomato-aws-project-guvi/'   #s3://zomato-aws-project-guvi/file1.json
+        bucket_name = 's3://zomato-aws-project-guvi/'   #s3://zomato-aws-project-guvi/file1.json
         file_key = file
 
         response = s3.get_object(Bucket=bucket_name, Key=file_key)
