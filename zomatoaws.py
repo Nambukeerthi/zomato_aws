@@ -207,16 +207,16 @@ except Exception as e:
 def insert_query():    
         
     conn = pymysql.connect(
-        host='your-db-endpoint.rds.amazonaws.com',
-        user='your-username',
-        password='your-password',
-        database='your-db-name',
-        port=3306
+        host='zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com',
+        user='admin',
+        password='nambukeerthi',
+        database='zomatoaws',
+        port='3306'
     )
 
     cursor = conn.cursor()
 
-    sql = "USE zomatords"
+    sql = "USE zomatoaws;"
     
     cursor.execute(sql)
 
