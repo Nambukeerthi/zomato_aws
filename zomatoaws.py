@@ -280,8 +280,8 @@ def visual(tables):
 # MACHINE LEARNING MODEL
 url_ml = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/zomato_ML.pkl"  # replace with your actual URL
 
-response = requests.get(url_ml)
-ml_data = pickle.loads(response.content)
+response_ml = requests.get(url_ml)
+ml_data = pickle.loads(response_ml.content)
 
 class option:
   
