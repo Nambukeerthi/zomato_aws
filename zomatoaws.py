@@ -18,17 +18,13 @@ import pickle                                           # MACHINE LEARNING MODEL
 
 def aws_bucket_connection(file):
     
-        s3 = boto3.client('s3')
-
-        bucket_name = 'zomato-aws-project-guvi'   #s3://zomato-aws-project-guvi/file1.json
-        file_key = file
-
-        response = s3.get_object(Bucket=bucket_name, Key=file_key)
-        content = response['Body'].read().decode('utf-8')
-        data_json = json.load(content)
+        url = file  # Replace with your JSON URL
         
-        return data_json
-
+        response = requests.get(url)
+        
+        data = response.json()  # Parses JSON into Python dict
+        
+        return data 
 
 #-------------------------------------------------------------
 
@@ -77,16 +73,16 @@ def json_function(data):
 
 
 # DATA EXTRACTION 
-#'https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json'
-json_file1 = 'https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json'
-data1 = aws_bucket_connection(json_file1)        # df = pd.read_csv('s3://your-bucket-name/folder/your_file.csv', storage_options={"key": "YOUR_KEY", "secret": "YOUR_SECRET"}) 
+
+json_file1 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json"
+data1 = aws_bucket_connection(json_file1)       
 returned_data1 =  json_function(data1) 
 df1 = pd.DataFrame([row.split(", ") for row in returned_data1], columns=['Restaurant_Name', 'Restaurant_ID', 'Price_range','Cuisines','Average_cost','Rating_text',
                                                                'Rating_color','Rating_votes','Rating','Address','City','City_id','Country_id','Locality'])
 
 #-------
 
-json_file2 = 'file2.json'
+json_file2 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file2.json"
 data2 = aws_bucket_connection(json_file2) 
 returned_data2 =  json_function(data2)
 
@@ -107,7 +103,7 @@ df2 = pd.DataFrame(dataF2_fixed, columns=['Restaurant_Name', 'Restaurant_ID', 'P
                                            'City_id', 'Country_id', 'Locality'])
 #-------
 
-json_file3 = 'file3.json'
+json_file3 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file3.json"
 data3 = aws_bucket_connection(json_file3) 
 returned_data3=  json_function(data3)
 
@@ -129,7 +125,7 @@ df3 = pd.DataFrame(dataF3_fixed, columns=['Restaurant_Name', 'Restaurant_ID', 'P
 
 #-------
 
-json_file4 = 'file4.json'
+json_file4 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file4.json"
 data4 = aws_bucket_connection(json_file4)
 returned_data4 =  json_function(data4)
 
@@ -151,7 +147,7 @@ df4 = pd.DataFrame(dataF4_fixed, columns=['Restaurant_Name', 'Restaurant_ID', 'P
 
 #-------
 
-json_file5 = 'file5.json'
+json_file5 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file5.json"
 data5 = aws_bucket_connection(json_file5)
 returned_data5 =  json_function(data5)
 
