@@ -12,3 +12,4 @@ json
 plotly.express                                                                      
 sqlite3                                    
 pickle   
+pymysql
