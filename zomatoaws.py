@@ -10,7 +10,7 @@ import boto3                                            # AWS S3 BUKET CONECTION
 from sqlite3 import Connection                          # SQL CONNECTION
 from sqlalchemy import create_engine                    # MYSQL QUERY READ PYTHON BASED
 import pickle                                           # MACHINE LEARNING MODEL PICKLE FILE(.PKL)
-import request
+import requests
 #-----------------------------------------------------------
 
 # AWS S3 BUCKET CONNECTION
