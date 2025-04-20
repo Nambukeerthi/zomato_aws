@@ -202,7 +202,7 @@ except Exception as e:
         
 def insert_query():    
         
-    conn = mysql.connector.connect(
+    conn = pymysql.connect(
         host='zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com',
         user='admin',
         password='nambukeerthi',
