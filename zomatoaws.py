@@ -20,7 +20,7 @@ def aws_bucket_connection(file):
     
         s3 = boto3.client('s3')
 
-        bucket_name = 'https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/'   #s3://zomato-aws-project-guvi/file1.json
+        bucket_name = 'zomato-aws-project-guvi'   #s3://zomato-aws-project-guvi/file1.json
         file_key = file
 
         response = s3.get_object(Bucket=bucket_name, Key=file_key)
@@ -78,7 +78,7 @@ def json_function(data):
 
 # DATA EXTRACTION 
 
-json_file1 = 'file1.json'
+json_file1 = 'https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json'
 data1 = aws_bucket_connection(json_file1)        # df = pd.read_csv('s3://your-bucket-name/folder/your_file.csv', storage_options={"key": "YOUR_KEY", "secret": "YOUR_SECRET"}) 
 returned_data1 =  json_function(data1) 
 df1 = pd.DataFrame([row.split(", ") for row in returned_data1], columns=['Restaurant_Name', 'Restaurant_ID', 'Price_range','Cuisines','Average_cost','Rating_text',
