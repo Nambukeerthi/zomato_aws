@@ -9,7 +9,7 @@ sqlalchemy
 mysql_connector
 boto3
 json
-pymysql                                                                
+pymysql                                                               
 plotly.express                                                                      
 sqlite3                                    
 pickle   
