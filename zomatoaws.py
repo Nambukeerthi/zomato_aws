@@ -25,9 +25,9 @@ def aws_bucket_connection(file):
 
         response = s3.get_object(Bucket=bucket_name, Key=file_key)
         content = response['Body'].read().decode('utf-8')
-
-
-        return content
+        data_json = json.load(content)
+        
+        return data_json
 
 
 #-------------------------------------------------------------
@@ -79,8 +79,7 @@ def json_function(data):
 # DATA EXTRACTION 
 
 json_file1 = 'file1.json'
-file_path1 = aws_bucket_connection(json_file1)        # df = pd.read_csv('s3://your-bucket-name/folder/your_file.csv', storage_options={"key": "YOUR_KEY", "secret": "YOUR_SECRET"})
-data1 = json.load(file_path1)
+data1 = aws_bucket_connection(json_file1)        # df = pd.read_csv('s3://your-bucket-name/folder/your_file.csv', storage_options={"key": "YOUR_KEY", "secret": "YOUR_SECRET"}) 
 returned_data1 =  json_function(data1) 
 df1 = pd.DataFrame([row.split(", ") for row in returned_data1], columns=['Restaurant_Name', 'Restaurant_ID', 'Price_range','Cuisines','Average_cost','Rating_text',
                                                                'Rating_color','Rating_votes','Rating','Address','City','City_id','Country_id','Locality'])
@@ -88,8 +87,7 @@ df1 = pd.DataFrame([row.split(", ") for row in returned_data1], columns=['Restau
 #-------
 
 json_file2 = 'file2.json'
-file_path2 = aws_bucket_connection(json_file2)
-data2 = json.load(file_path2)
+data2 = aws_bucket_connection(json_file2) 
 returned_data2 =  json_function(data2)
 
 max_columns = 14  # or whatever your intended number of columns is
@@ -110,8 +108,7 @@ df2 = pd.DataFrame(dataF2_fixed, columns=['Restaurant_Name', 'Restaurant_ID', 'P
 #-------
 
 json_file3 = 'file3.json'
-file_path3 = aws_bucket_connection(json_file3)
-data3 = json.load(file_path3)
+data3 = aws_bucket_connection(json_file3) 
 returned_data3=  json_function(data3)
 
 max_columns = 14  # or whatever your intended number of columns is
@@ -133,8 +130,7 @@ df3 = pd.DataFrame(dataF3_fixed, columns=['Restaurant_Name', 'Restaurant_ID', 'P
 #-------
 
 json_file4 = 'file4.json'
-file_path4 = aws_bucket_connection(json_file4)
-data4 = json.load(file_path4)
+data4 = aws_bucket_connection(json_file4)
 returned_data4 =  json_function(data4)
 
 max_columns = 14  # or whatever your intended number of columns is
@@ -156,8 +152,7 @@ df4 = pd.DataFrame(dataF4_fixed, columns=['Restaurant_Name', 'Restaurant_ID', 'P
 #-------
 
 json_file5 = 'file5.json'
-file_path5 = aws_bucket_connection(json_file5)
-data5 = json.load(file_path5)
+data5 = aws_bucket_connection(json_file5)
 returned_data5 =  json_function(data5)
 
 max_columns = 14  # or whatever your intended number of columns is
