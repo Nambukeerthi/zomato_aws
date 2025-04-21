@@ -478,20 +478,8 @@ with st.form("my form 1"):
                             url_ml = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/zomato_ML.pkl"  # replace with your actual URL
                             response_ml = requests.get(url_ml)
                             model = pickle.loads(response_ml.content)
-                            
-                            import pandas as pd
 
-                            user_data = pd.DataFrame([{
-                                'Cuisines': Cuisines,
-                                'Rating_text': Rating_text,
-                                'Rating': Rating,
-                                'Country_id': Country_id,
-                                'City_id': City_id
-                            }])
-                            user_data['Cuisines'] = le_cuisine.transform(user_data['Cuisines'])
-                            user_data['Rating_text'] = le_rating_text.transform(user_data['Rating_text'])
-
-                            #user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
+                            user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
                             raw_prediction = model.predict(user_data)
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[PRICE:] ', resale_price)            
