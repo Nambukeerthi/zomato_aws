@@ -488,6 +488,8 @@ with st.form("my form 1"):
                                 'Country_id': Country_id,
                                 'City_id': City_id
                             }])
+                            user_data['Cuisines'] = le_cuisine.transform(user_data['Cuisines'])
+                            user_data['Rating_text'] = le_rating_text.transform(user_data['Rating_text'])
 
                             #user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
                             raw_prediction = model.predict(user_data)
