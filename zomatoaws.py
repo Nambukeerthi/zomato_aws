@@ -448,7 +448,7 @@ with st.form("my form 1"):
 
                     # Display selected values
                     if country_name1 and city_name1:
-                       st.success(f"Country : {country_name1}, State : {city_name1}")     
+                       st.write(f"Country : {country_name1}, State : {city_name1}")     
                               
 
                     
