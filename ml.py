@@ -214,9 +214,11 @@ with st.form("my form 1"):
                             City_id = option.encoded_city_id[city_name1]
                             
                             with open('zomato_ML.pkl', 'rb') as files:
-                                model = joblib.load(files)
-                            
-                            user_data = np.array([[Cuisines,Rating_text,Rating,City_id,Country_id]]) 
+                                model = pickle.load(files)
+                           
+                            user_data = np.array(user_data).reshape(1, -1)
+                            user_data = pd.DataFrame([user_data], columns=model.feature_names_in_)
+                            #user_data = np.array([[Cuisines,Rating_text,Rating,City_id,Country_id]]) 
                             raw_prediction = model.predict(user_data)
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
