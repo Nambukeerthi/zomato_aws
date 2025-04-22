@@ -11,7 +11,7 @@ import boto3                                            # AWS S3 BUKET CONECTION
 from sqlite3 import Connection
 from sqlalchemy import create_engine                    # MYSQL CONNECTION AND READ
 import pickle
-
+import joblib
 
 class option:
   
@@ -214,7 +214,7 @@ with st.form("my form 1"):
                             City_id = option.encoded_city_id[city_name1]
                             
                             with open('zomato_ML.pkl', 'rb') as files:
-                                model = pickle.load(files)
+                                model = joblib.load(files)
                             
                             user_data = np.array([[Cuisines,Rating_text,Rating,City_id,Country_id]]) 
                             raw_prediction = model.predict(user_data)
