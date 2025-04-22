@@ -12,7 +12,7 @@ plotly
 plotly.express                                                                                                          
 scikit-learn  
 pymysql
-scikit-learn ==  1.3.0
+scikit-learn ==  1.2.2
 daal4py 
 imbalanced-learn
 scikit-learn-intelex
