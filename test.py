@@ -41,7 +41,7 @@ def json_function(data):
 
 
 # DATA EXTRACTION 
-def test():
+def test1():
       json_file1 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json"
       data1 = aws_bucket_connection(json_file1)       
       returned_data1 =  json_function(data1) 
