@@ -227,4 +227,6 @@ with st.form("my form 1"):
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
-  test.test()
+ t = test.test()
+ tt = t.head()
+ st.DataFrame(tt, use_container_width = True) 
