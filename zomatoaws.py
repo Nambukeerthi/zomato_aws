@@ -489,7 +489,7 @@ with st.form("my form 1"):
                                 'City_id': City_id
                             }])
 
-                            #user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
+                            user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
                             raw_prediction = model.predict(user_data)
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[PRICE:] ', resale_price)            
