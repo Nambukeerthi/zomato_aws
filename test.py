@@ -1,4 +1,5 @@
 import streamlit
+import requests
 def json_function(data):
   dataF=[]   
   for i in data:
@@ -42,7 +43,9 @@ def json_function(data):
 
 # DATA EXTRACTION 
 def test1():
-      json_file1 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json"
+      url_ml = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/zomato_ML1.pkl"  # replace with your actual URL
+      response_ml = requests.get(url_ml)
+      json_file1 =  response_ml                           # "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json"
       data1 = aws_bucket_connection(json_file1)       
       returned_data1 =  json_function(data1) 
       df1 = pd.DataFrame([row.split(", ") for row in returned_data1], columns=['Restaurant_Name', 'Restaurant_ID', 'Price_range','Cuisines','Average_cost','Rating_text',
