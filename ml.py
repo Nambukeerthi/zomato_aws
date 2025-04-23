@@ -213,11 +213,13 @@ with st.form("my form 1"):
                             Country_id = option.encoded_country_id[country_name1]
                             City_id = option.encoded_city_id[city_name1]
                             
-                            with open('zomato_ML1.pkl', 'rb') as files:
-                                model = pickle.load(files)
+                            #with open('zomato_ML1.pkl', 'rb') as files:
+                                #model = pickle.load(files)
+
+                            url_ml = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/zomato_ML1.pkl"  # replace with your actual URL
+                            response_ml = requests.get(url_ml)
+                            model = pickle.loads(response_ml.content)
                            
-                            #user_data = np.array(user_data).reshape(1, -1)
-                            #user_data = pd.DataFrame([user_data], columns=model.feature_names_in_)
                             user_data = np.array([[Cuisines,Rating_text,Rating,City_id,Country_id]]) 
                             raw_prediction = model.predict(user_data)
                             resale_price = round(raw_prediction[0],2)
