@@ -13,7 +13,7 @@ from sqlalchemy import create_engine                    # MYSQL CONNECTION AND R
 import pickle
 import joblib
 import requests
-import test.py
+import test
 
 class option:
   
