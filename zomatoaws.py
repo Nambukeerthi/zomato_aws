@@ -479,16 +479,6 @@ with st.form("my form 1"):
                             response_ml = requests.get(url_ml)
                             model = pickle.loads(response_ml.content)
 
-                            import pandas as pd
-
-                            user_data = pd.DataFrame([{
-                                'Cuisines': Cuisines,
-                                'Rating_text': Rating_text,
-                                'Rating': Rating,
-                                'Country_id': Country_id,
-                                'City_id': City_id
-                            }])
-
                             user_data = np.array([[Cuisines,Rating_text,Rating,Country_id,City_id]]) 
                             raw_prediction = model.predict(user_data)
                             resale_price = round(raw_prediction[0],2)
