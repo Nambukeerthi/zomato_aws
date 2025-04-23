@@ -1,3 +1,4 @@
+import streamlit
 def json_function(data):
   dataF=[]   
   for i in data:
@@ -47,4 +48,4 @@ def test():
       df1 = pd.DataFrame([row.split(", ") for row in returned_data1], columns=['Restaurant_Name', 'Restaurant_ID', 'Price_range','Cuisines','Average_cost','Rating_text',
                                                                      'Rating_color','Rating_votes','Rating','Address','City','City_id','Country_id','Locality'])
 
-   return df1
+      st.DataFrame(df1.head())
