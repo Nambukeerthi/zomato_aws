@@ -213,7 +213,7 @@ with st.form("my form 1"):
                             Country_id = option.encoded_country_id[country_name1]
                             City_id = option.encoded_city_id[city_name1]
                             
-                            with open('zomato_ML.pkl', 'rb') as files:
+                            with open('zomato_ML1.pkl', 'rb') as files:
                                 model = pickle.load(files)
                            
                             #user_data = np.array(user_data).reshape(1, -1)
