@@ -12,8 +12,5 @@ plotly
 plotly.express                                                                                                           
 pymysql
 scikit-learn 
-daal4py 
-imbalanced-learn
-scikit-learn-intelex
-joblib
-pickle
+
+
