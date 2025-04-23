@@ -12,6 +12,8 @@ from sqlite3 import Connection
 from sqlalchemy import create_engine                    # MYSQL CONNECTION AND READ
 import pickle
 import joblib
+import requests
+
 
 class option:
   
