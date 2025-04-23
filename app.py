@@ -228,7 +228,7 @@ with st.form("my form 1"):
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
    # URL of the raw Python file
-  url2 = "https://github.com/Nambukeerthi/zomato_aws/blob/main/test.py"
+  url2 = "https://github.com/Nambukeerthi/zomato_aws/blob/a9a2bc3ed7607e4a8125415caf23b7021b8abcad/test.py"
   
   # Fetch the file content
   response2 = requests.get(url2)
