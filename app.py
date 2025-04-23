@@ -13,7 +13,7 @@ from sqlalchemy import create_engine                    # MYSQL CONNECTION AND R
 import pickle
 import joblib
 import requests
-
+import test
 
 class option:
   
@@ -226,5 +226,5 @@ with st.form("my form 1"):
                             raw_prediction = model.predict(user_data)
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
-#if 
-st.button("CLICK HERE")
+if st.button("CLICK HERE"):
+  test.test()
