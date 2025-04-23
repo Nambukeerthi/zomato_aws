@@ -11,8 +11,9 @@ boto3
 plotly
 plotly.express                                                                                                           
 pymysql
-scikit-learn ==  1.3.0
+scikit-learn 
 daal4py 
 imbalanced-learn
 scikit-learn-intelex
 joblib
+pickle
