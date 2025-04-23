@@ -13,7 +13,7 @@ from sqlalchemy import create_engine                    # MYSQL CONNECTION AND R
 import pickle
 import joblib
 import requests
-
+import importlib.util
 
 class option:
   
@@ -227,6 +227,21 @@ with st.form("my form 1"):
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
- t = test.aws.test1()
- tt = t.head()
- st.DataFrame(tt, use_container_width = True) 
+   # URL of the raw Python file
+  url2 = "https://github.com/Nambukeerthi/zomato_aws/blob/main/test.py"
+  
+  # Fetch the file content
+  response2 = requests.get(url2)
+  code = response2.text
+  
+  # Dynamically create a module
+  module_name = "test_online"
+  spec = importlib.util.spec_from_loader(module_name, loader=None)
+  test1_online = importlib.util.module_from_spec(spec)
+  
+  # Execute the code inside the module's namespace
+  exec(code, test1_online.__dict__)
+  
+  # Now call any function defined in the module
+  test1_online.test1() 
+
