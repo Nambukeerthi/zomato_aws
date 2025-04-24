@@ -76,6 +76,7 @@ def json_function(data):
 
 # DATA EXTRACTION 
 def data_extraction():
+    
         json_file1 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/file1.json"
         data1 = aws_bucket_connection(json_file1)       
         returned_data1 =  json_function(data1) 
@@ -184,22 +185,22 @@ def data_extraction():
                                                                 ' 31  2nd Floor  Hauz Khas Village  New Delhi',' Davenport'])]
         df_original.reset_index(inplace=True)
 
-
+        dF_original
 #-------------------------------------------------------------------
 
 
-#  MYSQL / AWS RDS CONNECTION
-
-limited_df = df_original.head(100)
-
-engine = create_engine('mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws')
-
-connection_variable ='mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws'
-try:
-    with engine.begin() as conn:
-        limited_df.to_sql('zomatodata', con=conn, if_exists='replace', index=False)
-except Exception as e:
-        st.write("Error occurred:", e)
+        #  MYSQL / AWS RDS CONNECTION
+        
+        limited_df = df_original.head(100)
+        
+        engine = create_engine('mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws')
+        
+        connection_variable ='mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws'
+        try:
+            with engine.begin() as conn:
+                limited_df.to_sql('zomatodata', con=conn, if_exists='replace', index=False)
+        except Exception as e:
+                st.write("Error occurred:", e)
         
         
 def insert_query():    
@@ -483,4 +484,7 @@ with st.form("my form 1"):
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
-  visual(tables)
+  data_extraction() 
+  insert_query()  
+  table_format = show_table(cuisines1,city_name1)  
+  visual(table_format)
