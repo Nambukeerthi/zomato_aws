@@ -14,6 +14,8 @@ import pickle
 import joblib
 import requests
 import importlib.util
+import pymysql
+
 
 # AWS S3 BUCKET CONNECTION
 
