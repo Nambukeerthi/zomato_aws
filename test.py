@@ -485,6 +485,6 @@ with st.form("my form 1"):
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
   data_extraction() 
-  insert_query()  
+  insert_query()   
   table_format = show_table(cuisines1,city_name1)  
   visual(table_format)
