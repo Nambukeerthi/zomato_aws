@@ -487,7 +487,11 @@ with st.form("my form 1"):
                             resale_price = round(raw_prediction[0],2)
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
-  data_extraction() 
-  insert_query()   
-  table_format = show_table(cuisines1,city_name1)  
-  visual(table_format)
+  with st.spinner("Loading..."):
+    if not all([cuisines1,rating_text1,rating1,country_name1,city_name1]):
+        st.error ("please fill all fields")   
+    else:    
+          data_extraction() 
+          insert_query()   
+          table_format = show_table(cuisines1,city_name1)  
+          visual(table_format)
