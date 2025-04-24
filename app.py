@@ -228,12 +228,17 @@ with st.form("my form 1"):
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
    # URL of the raw Python file
-  url2 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/print.py"
+  url2 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/test.py"
   # Fetch the file content
   response2 = requests.get(url2)
-  response2.content
+  code =  response2.text
   # Execute the code inside the module's namespace
-  #exec(code)
+  # Create a namespace (a dict) to safely execute the code
+  namespace = {}
+  exec(code_str, namespace)
+  
+  # Now call the function defined in print.py
+  namespace['test1']()
   
 
 
