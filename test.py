@@ -185,7 +185,7 @@ def data_extraction():
                                                                 ' 31  2nd Floor  Hauz Khas Village  New Delhi',' Davenport'])]
         df_original.reset_index(inplace=True)
 
-        dF_original
+        
 #-------------------------------------------------------------------
 
 
