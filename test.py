@@ -203,7 +203,8 @@ def data_extraction():
                 limited_df.to_sql('zomatodata', con=conn, if_exists='replace', index=False)
         except Exception as e:
                 st.write("Error occurred:", e)
-        
+
+engine = create_engine('mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws')
         
 def insert_query():    
         
