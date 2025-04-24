@@ -228,20 +228,13 @@ with st.form("my form 1"):
                             st.write('## :green[AVERAGE COST : ] ', resale_price) 
 if st.button("CLICK HERE"):
    # URL of the raw Python file
-  url2 = "test.py"
-  
+  url2 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/test.py"
   # Fetch the file content
   response2 = requests.get(url2)
   code = response2.text
-  
-  # Dynamically create a module
-  module_name = "test_online"
-  spec = importlib.util.spec_from_loader(module_name, loader=None)
-  test1_online = importlib.util.module_from_spec(spec)
-  
   # Execute the code inside the module's namespace
-  exec(code, test1_online.__dict__)
+  exec(code)
   
   # Now call any function defined in the module
-  test1_online.test1() 
+  #test1_online.test1() 
 
