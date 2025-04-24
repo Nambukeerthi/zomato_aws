@@ -236,5 +236,5 @@ if st.button("CLICK HERE"):
   exec(code)
   
   # Now call any function defined in the module
-  #test1_online.test1() 
+  code.test1() 
 
