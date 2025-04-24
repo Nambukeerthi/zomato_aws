@@ -212,7 +212,7 @@ def insert_query():
         user='admin',
         password='nambukeerthi',
         database='zomatoaws',
-        port='3306'
+        port= 3306
     )
 
     cursor = conn.cursor()
