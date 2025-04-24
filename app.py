@@ -231,9 +231,9 @@ if st.button("CLICK HERE"):
   url2 = "https://zomato-aws-project-guvi.s3.eu-north-1.amazonaws.com/print.py"
   # Fetch the file content
   response2 = requests.get(url2)
-  code = response2.text
+  response2.text
   # Execute the code inside the module's namespace
-  exec(code)
+  #exec(code)
   
 
 
