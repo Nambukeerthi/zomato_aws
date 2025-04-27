@@ -1,4 +1,4 @@
-<h1> Zomato_Prediction_AWS_Deployment </h1>
+<h1> Zomato_Cost_Prediction_AWS_Deployment </h1>
 
 
 <h1 align="center">
