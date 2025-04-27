@@ -193,7 +193,7 @@ def data_extraction():
 
         #  MYSQL / AWS RDS CONNECTION
         
-        limited_df = df_original.head(100)
+        limited_df = df_original
         
         engine = create_engine('mysql+pymysql://admin:nambukeerthi@zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com:3306/zomatoaws')
         
