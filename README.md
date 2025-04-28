@@ -15,7 +15,7 @@
   <a href="#Technologies Applied"></a>  
 </p>
 
-Video Link: [Linked-IN Video](https://www.linkedin.com/posts/nambu-keerthi-r-9b8839283_project-name-industrial-copper-model-project-activity-7296603762872262657-FJoL?utm_source=share&utm_medium=member_android&rcm=ACoAABMFg5wB3AA0b9CHRbG1E_77kFaZB8cVz7c)
+Video Link: [Linked-IN Video](https://www.linkedin.com/posts/nambu-keerthi-r-9b8839283_project-name-zomato-cost-prediction-aws-activity-7322432538038149120-d3tT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUARVwBltI0ri4ApeK7YzcbHxGViaHfWEM))
 
 Portfolio: [Nambu Keerthi](https://portfolio-b5zieg8xn5nhwau5b4bhp8.streamlit.app/)
 
