@@ -3,7 +3,7 @@
 
 <h1 align="center">
   <br>
-  <a href=""><img src="" alt="" width="400"></a>
+  <a href=""><img src="" alt="" width=""></a>
   <br>
  
   <br>
