@@ -1,14 +1,14 @@
 <h1> Zomato_Cost_Prediction_AWS_Deployment </h1>
 
 
-<h1 align="center">
+<h2 align="center">
   <br>
   <a href=""><img src="" alt="" width=""></a>
   https://zomatoaws-tgukkcpu6fytkfbn7xkbyc.streamlit.app/
   <br>
  
   <br>
-</h1>
+</h2>
 
 
 <p align="center">
