@@ -108,7 +108,7 @@ cd "Your-repository" (then) ls
 
 sudo apt install python3-pip
 
-pip3 install -r requirements.txt (or) pip install -r <your-package> --break-system-packages
+pip3 install -r requirements.txt (or) pip install -r requirements.txt --break-system-packages
 
 #Temporary running
 python3 -m streamlit run app.py
