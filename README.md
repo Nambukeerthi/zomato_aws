@@ -114,7 +114,7 @@ pip3 install -r requirements.txt (or) pip install -r requirements.txt --break-sy
 python3 -m streamlit run app.py
 
 #Permanent running
-nohup python3 -m streamlit run app.py
+nohup python3 -m streamlit run zomato_aws_app.py
 
 Note: Streamlit runs on this port: 8501
 
