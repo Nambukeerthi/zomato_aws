@@ -104,6 +104,8 @@ sudo apt install git curl unzip tar make sudo vim wget -y
 
 git clone "Your-repository"
 
+cd "Your-repository" (then) ls
+
 sudo apt install python3-pip
 
 pip3 install -r requirements.txt (or) pip install -r <your-package> --break-system-packages
