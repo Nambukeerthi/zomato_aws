@@ -111,7 +111,7 @@ sudo apt install python3-pip
 pip3 install -r requirements.txt (or) pip install -r requirements.txt --break-system-packages
 
 #Temporary running
-python3 -m streamlit run app.py
+python3 -m streamlit run zomato_aws_app.py
 
 #Permanent running
 nohup python3 -m streamlit run zomato_aws_app.py
