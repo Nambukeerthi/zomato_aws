@@ -189,8 +189,22 @@ def data_extraction():
 
         
 #-------------------------------------------------------------------
-
-
+        #  MYSQL / AWS RDS DATABASE CREATION
+    
+        connection = pymysql.connect(
+                host='zomato-database-1.cdko86s0kxtq.eu-north-1.rds.amazonaws.com',  
+                user='admin',                      
+                password='nambukeerthi',                   
+                port=3306                                  
+            )
+            
+        try:
+                with connection.cursor() as cursor:
+                    cursor.execute("CREATE DATABASE zomatoaws;")
+                    
+        finally:
+                connection.close()
+            
         #  MYSQL / AWS RDS CONNECTION
         
         limited_df = df_original
